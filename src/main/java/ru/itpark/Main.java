@@ -46,8 +46,7 @@ public class Main {
                 false,
                 true,
                 "Трафик без ограничений для использования дома и в поездках по России",
-                0,
-                0);
+                "Безлимитный интернет");
 
         tariffs[3] = new TariffForDevices(4,
                 "МегаФон — Онлайн",
@@ -56,8 +55,7 @@ public class Main {
                 false,
                 true,
                 "Базовый тариф для подключения интернет-опций и использования на устройствах",
-                1,
-                250);
+                "Оплата трафика по факту использования");
 
         for (AbstractTariff tariff : tariffs) {
             System.out.println(tariff);
