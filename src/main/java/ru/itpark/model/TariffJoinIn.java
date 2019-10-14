@@ -35,4 +35,31 @@ public class TariffJoinIn extends AbstractTariff {
     public String[] getAdditionalFeatures() {
         return additionalFeatures;
     }
+
+    @Override
+    public String toString() {
+        String rubleSymbol = " \u20BD ";
+        String endOfLine = "\r\n";
+        String result = super.getTitle();
+        if (super.isHit()) {
+            result = result + " (Хит)";
+        }
+        result = result + endOfLine + minutes + " минут" + endOfLine;
+        if (gigabytes > 0) {
+            result = result + gigabytes + " ГБ" + endOfLine;
+        } else {
+            result = result + "Безлимитный интернет" + endOfLine;
+        }
+        if (smsCount > 0) {
+            result = result + smsCount + " SMS" + endOfLine;
+        }
+        for (String feature : additionalFeatures) {
+            result = result + feature + endOfLine;
+        }
+        result = result + super.getPrice() + rubleSymbol + super.getPayPeriod() + endOfLine;
+        if (super.isCanBeOrderedOnline()) {
+            result = result + "*Выбрать*" + endOfLine;
+        }
+        return result;
+    }
 }
