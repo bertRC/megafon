@@ -1,6 +1,7 @@
 package ru.itpark;
 
 import ru.itpark.model.AbstractTariff;
+import ru.itpark.model.OtherTariffs;
 import ru.itpark.model.TariffForDevices;
 import ru.itpark.model.TariffJoinIn;
 
@@ -48,7 +49,8 @@ public class Main {
                 "Трафик без ограничений для использования дома и в поездках по России",
                 "Безлимитный интернет");
 
-        tariffs[3] = new TariffForDevices(4,
+        tariffs[3] = new TariffForDevices(
+                4,
                 "МегаФон — Онлайн",
                 0,
                 "в месяц",
@@ -56,6 +58,28 @@ public class Main {
                 true,
                 "Базовый тариф для подключения интернет-опций и использования на устройствах",
                 "Оплата трафика по факту использования");
+
+        tariffs[4] = new OtherTariffs(
+                5,
+                "Полсекундный",
+                0,
+                null,
+                false,
+                false,
+                "Тариф без абонентской платы",
+                "Посекундная тарификация",
+                null);
+
+        tariffs[5] = new OtherTariffs(
+                6,
+                "Умные вещи",
+                20,
+                "в неделю",
+                false,
+                true,
+                "Тариф для умных устройств",
+                "Безлимитный интернет",
+                "Звонки и SMS на номера России");
 
         for (AbstractTariff tariff : tariffs) {
             System.out.println(tariff);
