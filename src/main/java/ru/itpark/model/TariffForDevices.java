@@ -33,7 +33,7 @@ public class TariffForDevices extends AbstractTariff {
             result = result + " (Хит)";
         }
         result = result + endOfLine + description + endOfLine;
-        if ((megabytes == 0) || (megabytesCost == 0)) {
+        if (megabytes == 0 || megabytesCost == 0) {
             result = result + "Безлимитный интернет" + endOfLine;
         } else {
             result = result + "Оплата трафика по факту использования" + endOfLine;

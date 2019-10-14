@@ -1,6 +1,7 @@
 package ru.itpark;
 
 import ru.itpark.model.AbstractTariff;
+import ru.itpark.model.TariffForDevices;
 import ru.itpark.model.TariffJoinIn;
 
 public class Main {
@@ -36,6 +37,17 @@ public class Main {
                 "Безлимитный интернет на популярные сервисы",
                 "Кэшбэк до 30%",
                 null);
+
+        tariffs[2] = new TariffForDevices(
+                3,
+                "Твой безлимит на 12 месяцев",
+                5_100,
+                "за год",
+                false,
+                true,
+                "Трафик без ограничений для использования дома и в поездках по России",
+                0,
+                0);
 
         for (AbstractTariff tariff : tariffs) {
             System.out.println(tariff);
