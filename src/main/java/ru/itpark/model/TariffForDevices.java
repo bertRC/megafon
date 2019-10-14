@@ -2,26 +2,20 @@ package ru.itpark.model;
 
 public class TariffForDevices extends AbstractTariff {
     private String description;
-    private int megabytes;
-    private int megabytesCostInKopecks;
+    private String internetDescription;
 
-    public TariffForDevices(int id, String title, int price, String payPeriod, boolean isHit, boolean canBeOrderedOnline, String description, int megabytes, int megabytesCost) {
+    public TariffForDevices(int id, String title, int price, String payPeriod, boolean isHit, boolean canBeOrderedOnline, String description, String internetDescription) {
         super(id, title, price, payPeriod, isHit, canBeOrderedOnline);
         this.description = description;
-        this.megabytes = megabytes;
-        this.megabytesCostInKopecks = megabytesCost;
+        this.internetDescription = internetDescription;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public int getMegabytes() {
-        return megabytes;
-    }
-
-    public int getMegabytesCost() {
-        return megabytesCostInKopecks;
+    public String getInternetDescription() {
+        return internetDescription;
     }
 
     @Override
@@ -32,13 +26,7 @@ public class TariffForDevices extends AbstractTariff {
         if (super.isHit()) {
             result = result + " (Хит)";
         }
-        result = result + endOfLine + description + endOfLine;
-        if (megabytes == 0 || megabytesCostInKopecks == 0) {
-            result = result + "Безлимитный интернет" + endOfLine;
-        } else {
-            result = result + "Оплата трафика по факту использования" + endOfLine;
-        }
-        result = result + super.getPrice() + rubleSymbol;
+        result = result + endOfLine + description + endOfLine + internetDescription + endOfLine + super.getPrice() + rubleSymbol;
         if (super.getPrice() == 0) {
             result = result + super.getPayPeriod();
         }
