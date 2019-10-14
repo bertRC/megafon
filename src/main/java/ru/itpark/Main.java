@@ -49,6 +49,16 @@ public class Main {
                 0,
                 0);
 
+        tariffs[3] = new TariffForDevices(4,
+                "МегаФон — Онлайн",
+                0,
+                "в месяц",
+                false,
+                true,
+                "Базовый тариф для подключения интернет-опций и использования на устройствах",
+                1,
+                250);
+
         for (AbstractTariff tariff : tariffs) {
             System.out.println(tariff);
         }
