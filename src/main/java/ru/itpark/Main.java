@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         AbstractTariff[] tariffs = new AbstractTariff[6];
 
+        String[] additionalFeatures = {"Всегда оставайтесь на связи", "Кэшбэк до 30%"};
         tariffs[0] = new TariffJoinIn(
                 1,
                 "Включайся! Общайся",
@@ -18,6 +19,7 @@ public class Main {
                 "Звонки на все мобильные номера России",
                 0,
                 0,
-                new String[2]);
+                additionalFeatures);
+
     }
 }
