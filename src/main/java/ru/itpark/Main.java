@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) {
         AbstractTariff[] tariffs = new AbstractTariff[6];
 
-        String[] additionalFeatures1 = {"Всегда оставайтесь на связи", "Кэшбэк до 30%"};
         tariffs[0] = new TariffJoinIn(
                 1,
                 "Включайся! Общайся",
@@ -19,9 +18,10 @@ public class Main {
                 "Звонки на все мобильные номера России",
                 0,
                 0,
-                additionalFeatures1);
+                "Всегда оставайтесь на связи",
+                "Кэшбэк до 30%",
+                null);
 
-        String[] additionalFeatures2 = {"Безлимитный интернет на популярные сервисы", "Кэшбэк до 30%"};
         tariffs[1] = new TariffJoinIn(
                 2,
                 "Включайся! Развлекайся",
@@ -33,7 +33,9 @@ public class Main {
                 "Звонки на местные мобильные номера",
                 10,
                 0,
-                additionalFeatures2);
+                "Безлимитный интернет на популярные сервисы",
+                "Кэшбэк до 30%",
+                null);
 
         for (AbstractTariff tariff : tariffs) {
             System.out.println(tariff);

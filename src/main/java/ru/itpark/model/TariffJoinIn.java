@@ -5,15 +5,19 @@ public class TariffJoinIn extends AbstractTariff {
     private String minutesDescription;
     private int gigabytes;
     private int smsCount;
-    private String[] additionalFeatures;
+    private String additionalFeature;
+    private String cashbackFeature;
+    private String otherFeature;
 
-    public TariffJoinIn(int id, String title, int price, String payPeriod, boolean isHit, boolean canBeOrderedOnline, int minutes, String minutesDescription, int gigabytes, int smsCount, String[] additionalFeatures) {
+    public TariffJoinIn(int id, String title, int price, String payPeriod, boolean isHit, boolean canBeOrderedOnline, int minutes, String minutesDescription, int gigabytes, int smsCount, String additionalFeature, String cashbackFeature, String otherFeature) {
         super(id, title, price, payPeriod, isHit, canBeOrderedOnline);
         this.minutes = minutes;
         this.minutesDescription = minutesDescription;
         this.gigabytes = gigabytes;
         this.smsCount = smsCount;
-        this.additionalFeatures = additionalFeatures;
+        this.additionalFeature = additionalFeature;
+        this.cashbackFeature = cashbackFeature;
+        this.otherFeature = otherFeature;
     }
 
     public int getMinutes() {
@@ -32,8 +36,16 @@ public class TariffJoinIn extends AbstractTariff {
         return smsCount;
     }
 
-    public String[] getAdditionalFeatures() {
-        return additionalFeatures;
+    public String getAdditionalFeature() {
+        return additionalFeature;
+    }
+
+    public String getCashbackFeature() {
+        return cashbackFeature;
+    }
+
+    public String getOtherFeature() {
+        return otherFeature;
     }
 
     @Override
@@ -53,8 +65,14 @@ public class TariffJoinIn extends AbstractTariff {
         if (smsCount > 0) {
             result = result + smsCount + " SMS" + endOfLine;
         }
-        for (String feature : additionalFeatures) {
-            result = result + feature + endOfLine;
+        if (additionalFeature != null) {
+            result = result + additionalFeature + endOfLine;
+        }
+        if (cashbackFeature != null) {
+            result = result + cashbackFeature + endOfLine;
+        }
+        if (otherFeature != null) {
+            result = result + otherFeature + endOfLine;
         }
         result = result + super.getPrice() + rubleSymbol + super.getPayPeriod() + endOfLine;
         if (super.isCanBeOrderedOnline()) {
