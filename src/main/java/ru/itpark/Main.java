@@ -21,5 +21,6 @@ public class Main {
                 0,
                 additionalFeatures);
 
+        System.out.println(tariffs);
     }
 }
