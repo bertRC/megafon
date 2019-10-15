@@ -1,7 +1,7 @@
 package ru.itpark;
 
 import ru.itpark.model.AbstractTariff;
-import ru.itpark.model.OtherTariffs;
+import ru.itpark.model.OtherTariff;
 import ru.itpark.model.TariffForDevices;
 import ru.itpark.model.TariffJoinIn;
 
@@ -59,7 +59,7 @@ public class Main {
                 "Базовый тариф для подключения интернет-опций и использования на устройствах",
                 "Оплата трафика по факту использования");
 
-        tariffs[4] = new OtherTariffs(
+        tariffs[4] = new OtherTariff(
                 5,
                 "Полсекундный",
                 0,
@@ -70,7 +70,7 @@ public class Main {
                 "Посекундная тарификация",
                 null);
 
-        tariffs[5] = new OtherTariffs(
+        tariffs[5] = new OtherTariff(
                 6,
                 "Умные вещи",
                 20,

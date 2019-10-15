@@ -1,11 +1,11 @@
 package ru.itpark.model;
 
-public class OtherTariffs extends AbstractTariff {
+public class OtherTariff extends AbstractTariff {
     private String description;
     private String internetDescription;
     private String callDescription;
 
-    public OtherTariffs(int id, String title, int price, String payPeriod, boolean isHit, boolean canBeOrderedOnline, String description, String internetDescription, String callDescription) {
+    public OtherTariff(int id, String title, int price, String payPeriod, boolean isHit, boolean canBeOrderedOnline, String description, String internetDescription, String callDescription) {
         super(id, title, price, payPeriod, isHit, canBeOrderedOnline);
         this.description = description;
         this.internetDescription = internetDescription;
